@@ -84,6 +84,7 @@ select {
 }
 select option[value="dark"] {
   background-color: var(--bg-dark);
+  color: var(--anti-flash);
 }
 select option[value="light"] {
   background-color: var(--anti-flash);
@@ -138,6 +139,7 @@ header {
 header select {
   /* margin-top: 2rem; */
   color: var(--text-clr);
+  font-family: var(--ff-head);
   cursor: pointer;
   margin-right: 3rem;
   padding: 6px 12px;
@@ -145,15 +147,13 @@ header select {
   border-radius: var(--br-l);
   border: 2px solid var(--text-clr);
 }
-.logos img {
-  margin-left: 1rem;
-  width: 32px;
-  opacity: 0.6;
+
+.logos {
+  margin-block: 2rem;
+  display: flex;
+  align-items: center;
 }
-.logo {
-  background: #000;
-  fill: green; /* You can replace #000 with your desired color code */
-}
+
 /* top section */
 .topsec {
   display: flex;
