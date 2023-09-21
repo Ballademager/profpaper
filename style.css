@@ -10,12 +10,11 @@ img {
 
 :root {
   /* colors */
-  --primary: ;
-  --secondary: ;
-  --tertiary: ;
-  --accent: ;
-  --dark: ;
-  --bright: ;
+  --bg-dark: #0c1b33;
+  --light-grey: #a7a6a6;
+  --anti-flash: #ebebeb;
+
+  --almost-black: #030d1d;
 
   /* spaces for margins and paddings */
   --space-xxs: calc(var(--space-sm) * 0.25);
@@ -27,8 +26,8 @@ img {
   --space-xxl: calc(var(--space-sm) * 6);
 
   /* font-families */
-  --ff-text: ;
-  --ff-head: ;
+  --ff-head: "Julius Sans One", sans-serif;
+  --ff-text: "Kalam", cursive;
 
   /* font-weights */
   --fw-n: 300;
@@ -53,6 +52,47 @@ img {
   font-family: var(--ff);
   background-color: var(--black); */
 }
+/* theme-switcher */
+
+[data-theme="dark"] {
+  --body-bg: var(--bg-dark);
+  --text-clr: var(--anti-flash);
+  --accent: var(--light-grey);
+}
+[data-theme="light"] {
+  --body-bg: var(--anti-flash);
+  --text-clr: var(--almost-black);
+  --accent: var(--bg-dark);
+}
+[data-theme="blue"] {
+  --paper-clr: var(--paper-blue);
+  --lines-clr: var(--lines-blue);
+  --vert-clr: var(--vert-blue);
+  --body-bg-clr: #d7ebff;
+}
+
+[data-theme="pink"] {
+  --paper-clr: var(--paper-pink);
+  --lines-clr: var(--lines-pink);
+  --vert-clr: var(--vert-pink);
+  --body-bg-clr: var(--paper-blue);
+}
+
+select {
+  background-color: var(--paper-clr);
+  font-weight: 700;
+}
+select option[value="dark"] {
+  background-color: var(--bg-dark);
+}
+select option[value="light"] {
+  background-color: var(--anti-flash);
+  color: var(--almost-black);
+}
+select option[value="dust"] {
+  background-color: var(--paper-white);
+}
+/* theme-switcher */
 
 a {
   text-decoration: none;
@@ -64,8 +104,8 @@ ol {
 /* @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Kalam:wght@300;400;700&display=swap"); */
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--anti-flash);
+  background-color: var(--body-bg);
+  color: var(--text-clr);
   font-family: var(--ff-text);
 }
 h1,
@@ -90,19 +130,30 @@ header {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.5rem;
 }
-header * {
-  color: var(--anti-flash);
-  margin-bottom: 1.5rem;
-}
+
 header select {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
+  color: var(--text-clr);
+  cursor: pointer;
   margin-right: 3rem;
   padding: 6px 12px;
   font-size: 16px;
+  border-radius: var(--br-l);
+  border: 2px solid var(--text-clr);
 }
-
+.logos img {
+  margin-left: 1rem;
+  width: 32px;
+  opacity: 0.6;
+}
+.logo {
+  background: #000;
+  fill: green; /* You can replace #000 with your desired color code */
+}
 /* top section */
 .topsec {
   display: flex;
@@ -110,12 +161,13 @@ header select {
   /* grid-template-columns: 2.5fr 1fr; */
   gap: 4rem;
 }
-img {
+#profil_img {
   aspect-ratio: 268/349;
   width: 268px;
-  border: solid 3px var(--anti-flash);
+  /* border: solid 3px var(--anti-flash); */
   border-radius: 150px;
 }
+
 .heads {
   display: flex;
   flex-direction: column;
@@ -126,7 +178,7 @@ img {
   font-family: var(--ff-text);
 }
 .line {
-  background-color: var(--anti-flash);
+  background-color: var(--text-clr);
   height: 2px;
   width: 100%;
   margin-bottom: 2rem;
@@ -205,94 +257,38 @@ ul {
   object-fit: cover;
   display: grid;
   place-items: center;
+  border-radius: var(--br-l);
   color: var(--anti-flash);
   text-shadow: 2px 2px 4px var(--bg-dark);
   font-size: 2rem;
   transition: all 0.5s;
-  border-radius: var(--br-l);
+  transition-delay: 0ms;
 }
 .project_card:hover {
   font-size: 2.3rem;
   transition: all 0.5s;
+  transform: scale(1.05);
 }
 .project_cards:has(.project_card:hover) .project_card:not(:hover) {
   filter: grayscale(0.8);
+  transform: scale(0.95);
+  transition-delay: 0;
 }
-.project_cards a:first-child {
+.project_cards :first-child a {
   background-image: url(img/bonsai.PNG);
   background-size: 100%;
 }
-.project_cards a:nth-child(2) {
+.project_cards :nth-child(2) a {
   background-image: url(img/kune.PNG);
   background-size: 110%;
 }
-.project_cards a:nth-child(3) {
+.project_cards :nth-child(3) a {
   background-image: url(img/transconsult.PNG);
   background-size: 140%;
 }
-/* theme-switcher */
-:root {
-  --bg-dark: #0c1b33;
-  --light-grey: #a7a6a6;
-  --anti-flash: #ebebeb;
-  --paper-yellow: #fff7d0;
-  --lines-yellow: #51d3ef;
-  --vert-yellow: #ff1b17;
-  --paper-blue: #d0fcff;
-  --lines-blue: #516aef;
-  --vert-blue: #ff1b17;
-  --paper-white: #fffdf5;
-  --lines-white: #bdc3c4;
-  --vert-white: #bdc3c4;
-  --paper-pink: #ffd8ed;
-  --lines-pink: #4e9fff;
-  --vert-pink: #ff06f5;
-  --ff-head: "Julius Sans One", sans-serif;
-  --ff-text: "Kalam", cursive;
+p span {
+  font-weight: bold;
 }
-[data-theme="classic"] {
-  --paper-clr: var(--paper-yellow);
-  --lines-clr: var(--lines-yellow);
-  --vert-clr: var(--vert-yellow);
-  --body-bg-clr: var(--paper-white);
-}
-[data-theme="blue"] {
-  --paper-clr: var(--paper-blue);
-  --lines-clr: var(--lines-blue);
-  --vert-clr: var(--vert-blue);
-  --body-bg-clr: #d7ebff;
-}
-[data-theme="dust"] {
-  --paper-clr: var(--paper-white);
-  --lines-clr: var(--lines-white);
-  --vert-clr: var(--vert-white);
-  --body-bg-clr: #e1d0b7;
-}
-[data-theme="pink"] {
-  --paper-clr: var(--paper-pink);
-  --lines-clr: var(--lines-pink);
-  --vert-clr: var(--vert-pink);
-  --body-bg-clr: var(--paper-blue);
-}
-
-select {
-  background-color: var(--paper-clr);
-  font-weight: 700;
-}
-select option[value="classic"] {
-  background-color: var(--paper-yellow);
-}
-select option[value="blue"] {
-  background-color: var(--paper-blue);
-}
-select option[value="dust"] {
-  background-color: var(--paper-white);
-}
-select option[value="pink"] {
-  background-color: var(--paper-pink);
-}
-/* theme-switcher */
-
 /* scroll content */
 .hidden {
   opacity: 0;
