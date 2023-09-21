@@ -259,6 +259,7 @@ ul {
   place-items: center;
   border-radius: var(--br-l);
   color: var(--anti-flash);
+  box-shadow: 1px 1px 4px var(--bg-dark);
   text-shadow: 2px 2px 4px var(--bg-dark);
   font-size: 2rem;
   transition: all 0.5s;
