@@ -186,7 +186,7 @@ body {
   background-color: var(--body-bg);
   color: var(--text-clr);
   font-family: var(--ff-text);
-  /* cursor: none; */
+  cursor: none;
 }
 h1,
 h2 {

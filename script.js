@@ -177,6 +177,7 @@ checkbox.addEventListener("change", () => {
 function loadLang() {
   if (langValue) {
     selectedLanguage = langValue;
+    checkbox.checked = selectedLanguage === "english";
   } else {
     selectedLanguage = "danish";
   }
@@ -193,7 +194,7 @@ function updateContent(language) {
   });
 }
 
-// cursor
+// ---- cursorstuff ----
 const cursor = document.querySelector(".cursor");
 let timeout;
 
