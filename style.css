@@ -27,7 +27,9 @@ img {
 
   /* font-families */
   --ff-head: "Julius Sans One", sans-serif;
-  --ff-text: "Kalam", cursive;
+  --ff-text: "Kalam", sans-serif;
+  --ff-text-b: "Kalam-bold", sans-serif;
+  --ff-text-l: "Kalam-light", sans-serif;
 
   /* font-weights */
   --fw-n: 300;
@@ -51,6 +53,40 @@ img {
   /* color: var(--white);
   font-family: var(--ff);
   background-color: var(--black); */
+}
+/* cursor */
+.cursor {
+  position: fixed;
+  z-index: 999;
+  background: #2696e8;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 20px #2696e8, 0 0 60px #2696e8, 0 0 100px #2696e8;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  animation: colors 5s infinite;
+}
+@keyframes colors {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.cursor::before {
+  content: "";
+  position: absolute;
+  background: #2696e8;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  transform: translate(-30%, -30%);
+  border-radius: 50%;
 }
 /* theme-switcher */
 
@@ -105,9 +141,11 @@ ol {
 /* @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Kalam:wght@300;400;700&display=swap"); */
 
 body {
+  /* position: relative; */
   background-color: var(--body-bg);
   color: var(--text-clr);
   font-family: var(--ff-text);
+  cursor: none;
 }
 h1,
 h2 {
@@ -131,7 +169,7 @@ header {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   margin-block: 1.5rem;
 }
@@ -189,6 +227,7 @@ h1 {
 }
 .topsec h2 {
   font-size: 50px;
+  font-weight: 300;
 }
 h3 {
   font-size: 26px;
@@ -210,9 +249,8 @@ section:not(:first-of-type, :nth-of-type(2), :nth-of-type(5)) {
   margin-top: 8rem;
 }
 .motivation > *,
-.skills > *,
-ul > *:not(:first-child) {
-  margin-block: 1rem;
+.skills > * {
+  margin-block: 1.5rem;
 }
 p,
 ul {
@@ -326,3 +364,23 @@ section :nth-child(6) {
   }
 }
 /* scroll content */
+
+@font-face {
+  font-family: "Julius Sans One";
+  src: url("fonts/JuliusSansOne-Regular.ttf");
+}
+@font-face {
+  font-family: "Kalam-light";
+  src: url("fonts/Kalam-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Kalam";
+  src: url("fonts/Kalam-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Kalam-bold";
+  src: url("fonts/Kalam-Bold.ttf");
+  font-weight: 700;
+}

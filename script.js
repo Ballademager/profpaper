@@ -1,5 +1,4 @@
-window.addEventListener("load", loadColors);
-// animate visibility
+// Intersection Observer
 const observer = new IntersectionObserver((entries) => [
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -13,6 +12,8 @@ const observer = new IntersectionObserver((entries) => [
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((element) => observer.observe(element));
 
+// Theme-switcher
+window.addEventListener("load", loadColors);
 const sel = document.querySelector("select");
 sel.addEventListener("change", clrSwitch);
 const themeValue = localStorage.getItem("theme");
@@ -38,3 +39,26 @@ function loadColors() {
   }
   // console.log("***********");
 }
+
+// cursor
+const cursor = document.querySelector(".cursor");
+let timeout;
+
+document.addEventListener("mousemove", (e) => {
+  let x = e.clientX;
+  let y = e.clientY;
+
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+  cursor.style.display = "block";
+
+  // mousestop
+  function mouseStopped() {
+    cursor.style.display = "none";
+  }
+  clearTimeout(timeout);
+  timeout = setTimeout(mouseStopped, 1000);
+});
+document.addEventListener("mouseout", () => {
+  cursor.style.display = "none";
+});
