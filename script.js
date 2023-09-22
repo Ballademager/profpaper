@@ -57,7 +57,7 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.display = "none";
   }
   clearTimeout(timeout);
-  timeout = setTimeout(mouseStopped, 1000);
+  timeout = setTimeout(mouseStopped, 2000);
 });
 document.addEventListener("mouseout", () => {
   cursor.style.display = "none";
