@@ -83,7 +83,7 @@ const languageData = {
     },
     {
       id: "p9",
-      text: "Udover mine tekniske færdigheder er jeg bekendt med brugen af designværktøjer som Figma og videoredigeringssoftware som Premiere Pro. Jeg har en passion for at kombinere design og teknologi for at skabe visuelt imponerende og funktionelle løsninger.",
+      text: "Udover mine tekniske færdigheder er jeg bekendt med brugen af designværktøjer som Figma og videoredigeringssoftware som Premiere Pro. Jeg har erfaring med hele designprocessen og passion for at kombinere design og teknologi for at skabe visuelt imponerende og funktionelle løsninger.",
     },
     {
       id: "project_headline",
@@ -149,7 +149,7 @@ const languageData = {
     },
     {
       id: "p9",
-      text: "In addition to my technical skills, I am familiar with the use of design tools like Figma and video editing software like Premiere Pro. I have a passion for combining design and technology to create visually stunning and functional solutions.",
+      text: "In addition to my technical skills, I am familiar with the use of design tools like Figma and video editing software like Premiere Pro. I have experience with the full design process and a passion for combining design and technology to create visually stunning and functional solutions.",
     },
     {
       id: "project_headline",

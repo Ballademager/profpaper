@@ -217,7 +217,7 @@ header {
   gap: 1rem;
 }
 
-header select {
+/* header select {
   color: var(--text-clr);
   font-family: var(--ff-head);
   cursor: pointer;
@@ -226,7 +226,7 @@ header select {
   font-size: 16px;
   border-radius: var(--br-l);
   border: 2px solid var(--text-clr);
-}
+} */
 
 .logos {
   margin-top: 4.5rem;
