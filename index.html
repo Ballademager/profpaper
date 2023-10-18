@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="resets.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script defer type="module" src="script.js"></script>
     <title>Internship Profile</title>
 </head>
@@ -28,19 +29,16 @@
                 <span class="slider round"></span>
             </label>
         </div>
-        <!-- <select name="color" id="theme-select">
-            <option value="dark">Dark</option>
-            <option value="light">Light</option>
-            <option value="dust">Dust</option>
-        </select> -->
     </header>
     <div class="cursor"></div>
     <main>
+        <h1 id="headline">FRONTEND DEVELOPER</h1>
         <section class="topsec">
             <div class="heads">
                 <div>
-                    <h1 id="headline">FRONTEND DEVELOPER</h1>
-                    <h2>Hannibal Vestmø Grønne</h2>
+                    <div class="divitis">
+                        <h2>Hannibal Vestmø Grønne</h2><img id="profil_img_m" src="img/profilbillede-2.webp" alt="">
+                    </div>
                     <a href="mailto:hannibalgronne@gmail.com">hannibalgronne@gmail.com</a>
                     <div class="logos">
                         <ul>
@@ -54,19 +52,26 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/hannibal-vestm%C3%B8-gr%C3%B8nne-9157b6172/">
+                            <li>
+                                <a href="https://www.linkedin.com/in/hannibal-vestm%C3%B8-gr%C3%B8nne-9157b6172/">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ebebeb"
                                         class="h-6 w-6">
                                         <path
                                             d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
                                         </path>
-                                    </svg></a></li>
+                                    </svg></a>
+                            </li>
+                            <li>
+                                <a href="https://codepen.io/Ballademager">
+                                    <img class="w-6 h-6" src="img/codepen-icon.svg" alt=""></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="line"></div>
             </div>
-            <img id="profil_img" src="img/profilbillede.webp" alt="">
+
+            <img id="profil_img" src="img/profilbillede-2.webp" alt="">
         </section>
         <section class="about">
             <h2 id="about-me">Om mig</h2>
@@ -94,32 +99,52 @@
         </section>
         <section class="skills">
             <h2 id="myskills" class="hidden">Mine færdigheder</h2>
-            <h3 id="codelang" class="hidden">HTML/CSS/JavaScript:</h3>
-
-            <p id="p5" class="hidden">Jeg har en solid forståelse for grundlæggende webudviklingssprog som HTML, CSS og
-                JavaScript. Jeg er
-                altid nysgerrig efter at udforske de utallige muligheder, der ligger inden for disse sprog, især når
-                det kommer til dynamisk styling og interaktioner.</p>
-            <p id="p6" class="hidden">Jeg har erfaring med at arbejde dynamisk med data og strukturere det, hvilket
-                hjælper
-                med at
-                forbedre brugeroplevelsen i mine projekter.</p>
-            <p id="p7" class="hidden"><span>React:</span> Jeg har erfaring med at arbejde komponentbaseret ved brug af
-                Astro og jeg er i
-                gang med at
-                udvikle mine færdigheder inden for React, hvilket vil give mig mulighed for at skabe moderne og
-                responsive webapplikationer.</p>
-            <p id="p8" class="hidden"><span>Databaseintegration:</span> Jeg er i stand til at arbejde med indhold fra
-                databaser, hvilket
-                udvider mine
-                muligheder for at levere dynamisk og skræddersyet indhold til brugerne.</p>
-
+            <div class="skill-grid">
+                <article class="html">
+                    <h3>HTML</h3>
+                    <div class="skill-items">
+                        <p class="l bubble">Forms</p>
+                        <p class="l bubble">Structure</p>
+                        <p class="l bubble">Tables</p>
+                        <p class="l bubble">Semantics</p>
+                        <p class="l bubble">Astro.build</p>
+                        <p class="l bubble">NPM</p>
+                    </div>
+                </article>
+                <article class="css">
+                    <h3>CSS</h3>
+                    <div class="skill-items">
+                        <p class="u bubble">Nesting</p>
+                        <p class="u bubble">Variables</p>
+                        <p class="u bubble">Animation</p>
+                        <p class="u bubble">Grid/Flex</p>
+                        <p class="u bubble">Subgrid</p>
+                        <p class="u bubble">:is():has()</p>
+                        <p class="u bubble">:where:not()</p>
+                        <p class="u bubble">Containerqueries</p>
+                    </div>
+                </article>
+                <article class="javascript">
+                    <h3>JavaScript</h3>
+                    <div class="skill-items">
+                        <p class="r bubble">Strings()</p>
+                        <p class="r bubble">Arrays[]</p>
+                        <p class="r bubble">Objects{}</p>
+                        <p class="r bubble">Localstorage</p>
+                        <p class="r bubble">REST API</p>
+                        <p class="r bubble">Fetch()</p>
+                        <p class="r bubble">POST/GET/PATCH/DELETE</p>
+                        <p class="r bubble">Events</p>
+                        <p class="r bubble">React(learning)</p>
+                    </div>
+                </article>
+            </div>
         </section>
         <section class="design">
-            <h3 id="designtools" class="hidden">WEBDESIGN</h3>
-            <p id="p9" class="hidden">Udover mine tekniske færdigheder er jeg bekendt med brugen af designværktøjer som
-                Figma og
-                videoredigeringssoftware som Premiere Pro. Jeg har en passion for at kombinere design og teknologi for
+            <h2 id="designtools" class="hidden">WEBDESIGN</h2>
+            <p id="p9" class="hidden">Udover mine tekniske færdigheder er jeg erfaren med brugen af designværktøjer som
+                Figma og videoredigeringssoftware som Premiere Pro. Jeg har en passion for at kombinere design og
+                teknologi for
                 at skabe visuelt imponerende og funktionelle løsninger.
             </p>
         </section>

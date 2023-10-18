@@ -12,6 +12,54 @@ const observer = new IntersectionObserver((entries) => [
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((element) => observer.observe(element));
 
+const skillsObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll(".l").forEach((bubble) => {
+          bubble.classList.add("animate__animated");
+          bubble.classList.add("animate__bounceInLeft");
+          bubble.classList.add("show");
+        });
+        entry.target.querySelectorAll(".u").forEach((bubble) => {
+          bubble.classList.add("animate__animated");
+          bubble.classList.add("animate__bounceInUp");
+          bubble.classList.add("show");
+        });
+        entry.target.querySelectorAll(".r").forEach((bubble) => {
+          bubble.classList.add("animate__animated");
+          bubble.classList.add("animate__bounceInRight");
+          bubble.classList.add("show");
+        });
+      } else {
+        entry.target.querySelectorAll(".l").forEach((bubble) => {
+          bubble.classList.remove("animate__animated");
+          bubble.classList.remove("animate__bounceInLeft");
+          bubble.classList.remove("show");
+        });
+        entry.target.querySelectorAll(".u").forEach((bubble) => {
+          bubble.classList.remove("animate__animated");
+          bubble.classList.remove("animate__bounceInUp");
+          bubble.classList.remove("show");
+        });
+        entry.target.querySelectorAll(".r").forEach((bubble) => {
+          bubble.classList.remove("animate__animated");
+          bubble.classList.remove("animate__bounceInRight");
+          bubble.classList.remove("show");
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  }
+);
+
+const skillsSection = document.querySelector(".skills");
+
+skillsObserver.observe(skillsSection);
+
 // Language Switcher
 // const switchInput = document.querySelector("#languages");
 
@@ -47,11 +95,11 @@ const languageData = {
     },
     {
       id: "p3",
-      text: "Mit mål under min praktik er at forbedre mine færdigheder inden for JavaScript, især i forhold til React eller andre frameworks. Jeg er fast besluttet på at dygtiggøre mig på disse områder og skabe værdifulde bidrag til de projekter jeg bliver en del af.",
+      text: "Mit mål under min praktik er at forbedre mine færdigheder inden for JavaScript, især inden for frameworks f.eks. React. Jeg er fast besluttet på at dygtiggøre mig på disse områder og skabe værdifulde bidrag til de projekter jeg bliver en del af.",
     },
     {
       id: "p4",
-      text: "Jeg ser frem til at bringe min passion og tekniske ekspertise til en praktikplads og bidrage til spændende projekter inden for frontendudvikling og multimediedesign.",
+      text: "Jeg ser frem til at bringe min passion og tekniske færdigheder til en praktikplads og bidrage til spændende projekter inden for frontendudvikling og multimediedesign.",
     },
     {
       id: "myskills",
@@ -83,7 +131,7 @@ const languageData = {
     },
     {
       id: "p9",
-      text: "Udover mine tekniske færdigheder er jeg bekendt med brugen af designværktøjer som Figma og videoredigeringssoftware som Premiere Pro. Jeg har erfaring med hele designprocessen og passion for at kombinere design og teknologi for at skabe visuelt imponerende og funktionelle løsninger.",
+      text: "Udover mine tekniske færdigheder er jeg erfaren med brugen af designværktøjer som Figma og videoredigeringssoftware som Premiere Pro. Jeg har erfaring med hele designprocessen og passion for at kombinere design og teknologi for at skabe visuelt imponerende og funktionelle løsninger.",
     },
     {
       id: "project_headline",
@@ -113,11 +161,11 @@ const languageData = {
     },
     {
       id: "p3",
-      text: "My goal during my internship is to enhance my skills in JavaScript, especially in relation to React or other frameworks. I am determined to excel in these areas and make valuable contributions to the projects I become a part of.",
+      text: "My goal during my internship is to enhance my skills in JavaScript, especially in relation to frameworks i.e. React. I am determined to excel in these areas and make valuable contributions to the projects I become a part of.",
     },
     {
       id: "p4",
-      text: "I look forward to bringing my passion and technical expertise to an internship and contributing to exciting projects in frontend development and multimedia design.",
+      text: "I look forward to bringing my passion and technical skills to an internship and contributing to exciting projects in frontend development and multimedia design.",
     },
     {
       id: "myskills",
@@ -149,7 +197,7 @@ const languageData = {
     },
     {
       id: "p9",
-      text: "In addition to my technical skills, I am familiar with the use of design tools like Figma and video editing software like Premiere Pro. I have experience with the full design process and a passion for combining design and technology to create visually stunning and functional solutions.",
+      text: "In addition to my technical skills, I am experienced with the use of design tools like Figma and video editing software like Premiere Pro. I have experience with the full design process and a passion for combining design and technology to create visually stunning and functional solutions.",
     },
     {
       id: "project_headline",
