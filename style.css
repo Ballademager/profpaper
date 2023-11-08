@@ -474,7 +474,7 @@ ul {
 .project_card {
   aspect-ratio: 3/2;
   width: 250px;
-  background-color: var(--paper-blue);
+  /* background-color: var(--paper-blue); */
 }
 .project_card {
   background-repeat: no-repeat;
@@ -484,10 +484,11 @@ ul {
   display: grid;
   place-items: center;
   border-radius: var(--br-l);
-  color: var(--anti-flash);
+  color: var(--bg-blue);
   box-shadow: 1px 1px 4px var(--bg-dark);
-  text-shadow: 2px 2px 4px var(--bg-dark);
+  text-shadow: 2px 2px 3px var(--bg-dark);
   font-size: 2rem;
+  font-weight: 600;
   transition: all 0.5s;
   transition-delay: 0ms;
 }
@@ -502,15 +503,19 @@ ul {
   transition-delay: 0;
 }
 .project_cards :first-child a {
-  background-image: url(img/bonsai.PNG);
-  background-size: 100%;
+  background-image: url(img/todo.webp);
+  background-size: 120%;
 }
 .project_cards :nth-child(2) a {
-  background-image: url(img/kune.PNG);
-  background-size: 110%;
+  background-image: url(img/bonsai.webp);
+  background-size: 100%;
 }
 .project_cards :nth-child(3) a {
-  background-image: url(img/transconsult.PNG);
+  background-image: url(img/kune.webp);
+  background-size: 110%;
+}
+.project_cards :nth-child(4) a {
+  background-image: url(img/transconsult.webp);
   background-size: 140%;
 }
 p span {
